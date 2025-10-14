@@ -1,1 +1,153 @@
+:root {
+  --bg: #fafafa;
+  --dot: #e6e6e6;
+  --purple: #5e2ea6;
+  --pill: #dcd3ee;
+  --blue: #2f6bff;
+  --black: #000;
+  --card-radius: 40px;
+  --container: 1200px;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background:
+    radial-gradient(circle at 0 0, rgba(0,0,0,0.02) 1px, transparent 1px),
+    radial-gradient(circle at 20px 20px, rgba(0,0,0,0.02) 1px, transparent 1px),
+    var(--bg);
+  background-size: 40px 40px;
+  color: #111;
+  padding: 32px 24px 80px;
+}
+
+/* ===== Top Navigation Bar ===== */
+.topbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.topbar-inner {
+  width: var(--container);
+  background: #050505;
+  padding: 18px 24px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ddd;
+  font-size: 13px;
+}
+
+.topbar-inner .right a {
+  color: #fff;
+  margin-left: 26px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ===== Title ===== */
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 24px 0 20px;
+}
+
+.title span {
+  display: block;
+  margin-top: 6px;
+  font-weight: 300;
+}
+
+/* ===== Test Subjects Pill ===== */
+.pill {
+  display: inline-block;
+  background: var(--pill);
+  padding: 18px 150px;
+  border-radius: 28px;
+  color: #000;
+  font-weight: 600;
+  margin: 6px auto 48px;
+  min-width: 360px;
+}
+
+/* ===== Cards Section ===== */
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.card {
+  flex: 1;
+  min-height: 300px;
+  border-radius: var(--card-radius);
+  position: relative;
+  padding: 28px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Blue Card (Humus) */
+.card-blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+.card-blue .scribble {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  top: 28px;
+  bottom: 80px;
+  width: calc(100% - 56px);
+  height: calc(100% - 136px);
+  object-fit: cover;
+  border-radius: 18px;
+  opacity: 0.9;
+}
+
+/* Black Card (John) */
+.card-dark {
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noimg {
+  font-family: 'Roboto Mono', monospace;
+  color: #2f6bff;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+/* Captions */
+.caption {
+  position: absolute;
+  right: 28px;
+  bottom: 20px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 800;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .cards { flex-direction: column; gap: 22px; }
+  .pill { padding: 14px 60px; }
+  .title { font-size: 30px; }
+}
