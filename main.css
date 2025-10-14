@@ -1,0 +1,37 @@
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 0 0, rgba(0,0,0,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 20px 20px, rgba(0,0,0,0.05) 1px, transparent 1px),
+    #ffffff;
+  background-size: 40px 40px;
+  color: #111;
+  padding: 30px;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.topbar-inner {
+  width: 90%;
+  background: #000;
+  color: white;
+  border-radius: 25px;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
+}
