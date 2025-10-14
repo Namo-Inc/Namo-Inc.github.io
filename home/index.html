@@ -1,167 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Namo Incorporated — Testing Facility #1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namo Incorporated. — Testing Facility #1</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #fafafa;
-      --dot: #e6e6e6;
-      --purple: #5e2ea6;
-      --pill: #dcd3ee;
-      --blue: #2f6bff;
-      --black: #000;
-      --card-radius: 40px;
-      --container: 1200px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background:
-        radial-gradient(circle at 0 0, rgba(0,0,0,0.02) 1px, transparent 1px),
-        radial-gradient(circle at 20px 20px, rgba(0,0,0,0.02) 1px, transparent 1px),
-        var(--bg);
-      background-size: 40px 40px;
-      color: #111;
-      padding: 32px 24px 80px;
-    }
-
-    /* --- Topbar --- */
-    .topbar {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 36px;
-    }
-    .topbar-inner {
-      width: var(--container);
-      background: #000;
-      padding: 18px 24px;
-      border-radius: 22px;
-      box-shadow: 0 0 0 6px rgba(0,0,0,0.08), 0 0 0 10px rgba(255,255,255,0.35) inset;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #ddd;
-      font-size: 13px;
-    }
-    .topbar-inner .right a {
-      color: #fff;
-      margin-left: 26px;
-      text-decoration: underline;
-      font-weight: 700;
-    }
-
-    /* --- Main --- */
-    main {
-      max-width: var(--container);
-      margin: 0 auto;
-      text-align: center;
-    }
-    h1 {
-      color: var(--purple);
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 1.1;
-      margin: 24px 0 20px;
-    }
-    h1 span {
-      display: block;
-      font-weight: 300;
-    }
-
-    /* --- Pill --- */
-    .pill {
-      display: inline-block;
-      background: var(--pill);
-      padding: 18px 150px;
-      border-radius: 28px;
-      color: #000;
-      font-weight: 600;
-      margin: 6px auto 48px;
-      min-width: 360px;
-    }
-
-    /* --- Cards --- */
-    .cards {
-      display: flex;
-      justify-content: space-between;
-      gap: 48px;
-      padding: 0 8px;
-    }
-    .card {
-      flex: 1;
-      border-radius: var(--card-radius);
-      position: relative;
-      min-height: 300px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      padding: 28px;
-    }
-
-    /* Blue card */
-    .card-blue {
-      background: var(--blue);
-      color: #fff;
-    }
-    .card-blue img {
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      top: 28px;
-      bottom: 80px;
-      width: calc(100% - 56px);
-      height: calc(100% - 136px);
-      object-fit: cover;
-      border-radius: 18px;
-      opacity: 0.9;
-      filter: contrast(0.95) saturate(1.1);
-    }
-
-    /* Black card */
-    .card-dark {
-      background: #000;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .noimg {
-      font-family: 'Roboto Mono', monospace;
-      color: #2f6bff;
-      font-size: 28px;
-      letter-spacing: 2px;
-    }
-
-    .caption {
-      position: absolute;
-      right: 28px;
-      bottom: 20px;
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    @media (max-width: 900px) {
-      .cards {
-        flex-direction: column;
-        gap: 22px;
-      }
-      .pill {
-        padding: 14px 60px;
-      }
-      h1 {
-        font-size: 30px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
@@ -175,22 +19,22 @@
     </div>
   </header>
 
-  <main>
-    <h1>Namo Incorporated.<br><span>Testing Facility #1</span></h1>
+  <main class="wrap">
+    <h1 class="title">Namo Incorporated.<br><span>Testing Facility #1</span></h1>
+
     <div class="pill">Test Subjects</div>
 
     <section class="cards">
       <article class="card card-blue">
-        <img src="scribble.jpeg" alt="Humus EX#1 image">
-        <div class="caption">Humus: EX#1</div>
+        <img src="scribble.jpg" alt="scribble" class="scribble">
+        <div class="caption"><strong>Humus: EX#1</strong></div>
       </article>
 
       <article class="card card-dark">
         <div class="noimg">[ No image yet ]</div>
-        <div class="caption">John: H#333</div>
+        <div class="caption"><strong>John: H#333</strong></div>
       </article>
     </section>
   </main>
 </body>
 </html>
-``
