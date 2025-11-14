@@ -1,40 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Namo Incorporated. — Testing Facility #1</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Namo Incorporated -- Testing Facility #1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="left">Powered by Google workspace, Squarespace domains, GitHub Pages</div>
-      <nav class="right">
-        <a href="#">Experiments</a>
-        <a href="#">Test subjects</a>
-        <a href="#">The reactor</a>
-      </nav>
+
+<div id="intro">
+    <div id="terminal">
+        <p>> INITIALIZING "main" SYSTEMS_</p>
+        <p class="glitch">> LOADING EXPERIMENTS...</p>
+        <p class="glitch">> WARNING: REACTOR UNSTABLE</p>
     </div>
-  </header>
+</div>
 
-  <main class="wrap">
-    <h1 class="title">Namo Incorporated.<br><span>Testing Facility #1</span></h1>
+<div id="main" class="hidden">
 
-    <div class="pill">Test Subjects</div>
+    <header>
+        <h1>Namo Incorporated</h1>
+        <h2>Testing Facility #1</h2>
+    </header>
 
-    <section class="cards">
-      <article class="card card-blue">
-        <img src="humus.png" alt="scribble" class="scribble">
-        <div class="caption"><strong>Humus: EX#1</strong></div>
-      </article>
-
-      <article class="card card-dark">
-        <div class="noimg">[ No image yet ]</div>
-        <div class="caption"><strong>John: H#333</strong></div>
-      </article>
+    <section class="card">
+        <h3>About This Facility</h3>
+        <p>
+            Namo Incorporated specializes in experimental research and high-risk anomaly testing. 
+            All visitors are subject to silent observation protocols.
+        </p>
     </section>
-  </main>
+
+    <section class="card">
+        <h3>Active Experiments</h3>
+
+        <ul class="experiments">
+
+            <li>
+                <strong>Experiment #14 -- "The Mirror That Remembers"</strong><br>
+                Status: <span class="stat red">Uncontained</span><br>
+                Description: Reflects events that haven't happened yet.
+            </li>
+
+            <li>
+                <strong>Experiment #22 -- "Synthetic Neuron Bloom"</strong><br>
+                Status: <span class="stat yellow">Volatile</span><br>
+                Description: Self-replicating neural clusters. Growth accelerating.
+            </li>
+
+            <li>
+                <strong>Experiment #34 -- "Project: Sleeper Node"</strong><br>
+                Status: <span class="stat green">Dormant</span><br>
+                Description: Unknown. Researchers refuse to comment.
+            </li>
+
+            <!-- NEW HUMUS -->
+            <li>
+                <strong>Experiment #47 -- "Humus"</strong><br>
+                Status: <span class="stat yellow">Unpredictable</span><br>
+                Description: Originally a nutrient-dense soil matrix sample. 
+                Developed spontaneous motility and shows preference for warm surfaces. 
+                Emits low-frequency humming when observed.
+            </li>
+
+            <!-- NEW JOHN -->
+            <li>
+                <strong>Experiment #48 -- "John"</strong><br>
+                Status: <span class="stat red">Restricted</span><br>
+                Description: Human subject with unknown background. Claims he "doesn't remember entering the facility." 
+                Displays temporal desynchronization -- sometimes answers questions before they're asked.
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="card">
+        <h3>Reactor Status</h3>
+        <div id="reactorBox">
+            <p id="reactorText">Stability: 94%</p>
+            <div id="reactorBar"><div id="reactorFill"></div></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Namo Incorporated © 2025 -- Facility Log v3.1</p>
+        <p class="hidden-clue">CLUE 01: /sector-zero</p>
+    </footer>
+
+</div>
+
+<!-- Hidden logs -->
+<div id="hiddenLogs" class="hidden-clue">
+    LOG 47-HUMUS: Avoid direct contact. Humus mimics breathing patterns.
+    <br>
+    LOG 48-JOHN: Subject continues asking for "the exit." Facility has no exits.
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
