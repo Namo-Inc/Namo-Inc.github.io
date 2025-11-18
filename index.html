@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://namo-inc.org/home">
-  <title>Redirecting...</title>
-  <script>
-    // Fallback redirect (in case meta refresh is blocked)
-    window.location.href = "https://namo-inc.org/home";
-  </script>
+<meta charset="UTF-8">
+<title>Namo-Inc Boot</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    color: #c0c0c0; /* gray text */
+    font-family: "Courier New", monospace;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  #screen {
+    white-space: pre;
+    font-size: 14px;
+    line-height: 1.2em;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .ok { color: #00ff00; }
+  .fail { color: #ff3333; }
+</style>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a href="https://namo-inc.org/home">click here</a>.</p>
+<div id="screen"></div>
+
+<script>
+const screen = document.getElementById("screen");
+
+// Array of sample boot messages
+const messages = [
+  "[    0.000000] Initializing Namo-Inc kernel...",
+  "[    0.123456] Loading modules...",
+  "[    0.234567] [  OK  ] CPU: VIRTUAL-CORE 4x 3.1GHz",
+  "[    0.345678] [  OK  ] RAM: 8192 MB",
+  "[    0.456789] [  OK  ] Storage: 128GB SSD",
+  "[    0.567890] [  OK  ] Mounted /",
+  "[    0.678901] [  OK  ] Starting network services",
+  "[    0.789012] [  OK  ] Starting display manager",
+  "[    0.890123] [  OK  ] Boot process complete",
+  "[    1.000000] Namo Incorporated Interface launching..."
+];
+
+// Generate extra random system messages to “flood” screen
+function randomMessage() {
+  const actions = ["Starting", "Loading", "Checking", "Initializing", "Mounting"];
+  const services = ["systemd-logind", "udev", "dbus", "network-manager", "display-manager"];
+  const statuses = ["[  OK  ]", "[FAILED]", "[DEPENDENCY]"];
+  const time = (Math.random() * 5).toFixed(6);
+
+  const action = actions[Math.floor(Math.random()*actions.length)];
+  const service = services[Math.floor(Math.random()*services.length)];
+  const status = statuses[Math.floor(Math.random()*statuses.length)];
+
+  return `[ ${time} ] ${status} ${action} ${service}`;
+}
+
+// Combine real messages + random flood
+let lines = [...messages];
+for (let i = 0; i < 100; i++) {
+  lines.push(randomMessage());
+}
+
+let i = 0;
+
+function printLine() {
+  if (i < lines.length) {
+    let line = lines[i];
+
+    // Color the statuses
+    line = line.replace("[  OK  ]", '<span class="ok">[  OK  ]</span>');
+    line = line.replace("[FAILED]", '<span class="fail">[FAILED]</span>');
+    line = line.replace("[DEPENDENCY]", '[DEPENDENCY]');
+
+    screen.innerHTML += line + "\n";
+    screen.scrollTop = screen.scrollHeight;
+
+    i++;
+    // Random delay to feel like real boot
+    const delay = Math.random() * 100 + 50; 
+    setTimeout(printLine, delay);
+  } else {
+    setTimeout(() => {
+      window.location.href = "/home";
+    }, 1000);
+  }
+}
+
+printLine();
+</script>
+
 </body>
 </html>
