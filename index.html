@@ -82,12 +82,12 @@ function printLine() {
 
     i++;
     // Random delay to feel like real boot
-    const delay = Math.random() * 100 + 50; 
+    const delay = Math.random() * 10 + 50; 
     setTimeout(printLine, delay);
   } else {
     setTimeout(() => {
       window.location.href = "/home";
-    }, 1000);
+    }, 500);
   }
 }
 
